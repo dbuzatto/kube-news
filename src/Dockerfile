@@ -1,7 +1,7 @@
 FROM node:20.10.0-alpine3.18
 WORKDIR /app
-COPY src/package*.json .
+COPY package*.json .
 RUN npm install
-COPY src/ .
+COPY . .
 EXPOSE 8080
 CMD ["node", "server.js"]
