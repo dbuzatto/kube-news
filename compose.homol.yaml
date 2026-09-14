@@ -1,5 +1,0 @@
-services:
-  kube_news:
-    image: diogobu/web-kube-news:${KUBE_NEWS_TAG}
-    ports:
-      - 8081:8081

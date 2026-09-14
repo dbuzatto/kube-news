@@ -12,22 +12,8 @@ services:
     networks:
       - kube_news_net
 
-  kube_news:
-    image: diogobu/kube-news:${KUBE_NEWS_TAG}
-    build:
-      context: ./src
-      dockerfile: Dockerfile
-    ports:
-      - 8080:8080
-    networks:
-      - kube_news_net
-    depends_on:
-      - postgre
-    environment:
-      DB_PASSWORD: ${POSTGRES_PASSWORD}
-      DB_USER: ${POSTGRES_USER}
-      DB_DATABASE: ${POSTGRES_DB}
-      DB_HOST: postgre
+include:
+  - kube-news.compose.yaml
 
 volumes:
   postgres_docker_vol:
